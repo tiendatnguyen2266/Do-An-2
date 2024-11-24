@@ -3,8 +3,8 @@ from diffusers import StableDiffusionPipeline
 
 # Định nghĩa tham số
 rand_seed = torch.manual_seed(42)
-NUM_INFERENCE_STEPS = 100
-GUIDANCE_SCALE = 0.85
+NUM_INFERENCE_STEPS = 50
+GUIDANCE_SCALE = 0.75
 HEIGHT = 512
 WIDTH = 512
 
@@ -13,13 +13,13 @@ model_list = ["nota-ai/bk-sdm-small",
               "CompVis/stable-diffusion-v1-4",
               "runwayml/stable-diffusion-v1-5",
               "prompthero/openjourney",
-              "stabilityai/stable-diffusion-xl-base-1.0",
-              "stabilityai/stable-diffusion-3.5-large",
-              "shuttleai/shuttle-3-diffusion"
+              "hakurei/waifu-diffusion",
+              "stabilityai/stable-diffusion-2-1",
+              "dreamlike-art/dreamlike-photoreal-2.0"
               ]
 
 
-def create_pipeline(model_name = model_list[6]):
+def create_pipeline(model_name = model_list[5]):
     # Nếu máy có GPU CUDA
     if torch.cuda.is_available():
         print("Using GPU")
