@@ -1,51 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 
 <head>
-    <title>Đồ Án Text 2 Image</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồ Án Text To Image</title>
+    <style>
+        /* Toàn bộ body */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1d1d1d, #333333);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #ff9800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Form container */
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Văn bản trong form */
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Textarea */
+        textarea {
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            resize: none;
+            box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button */
+        button {
+            border: none;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Hình ảnh hiển thị */
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 
 <body>
-    <style>
-
-        button {
-            border: none;
-            background-color:orange;
-            color: white;
-            padding: 10px 22px;
-            text-align: center;
-            display: inline-block;
-            font-size: 18px;
-            margin: 4px 2px;
-        }
-
-        body {
-            font-family: Arial;
-            text-align:center;
-            color:white;
-            background-color:black;
-        }
-    </style>
-
-    <h1>Demo Đồ Án Text-2-Image</h1>
-    <br>
-
+    <h1>Demo Đồ Án Text To Image</h1>
     <form action="/" method="post">
         <div class="myDiv">
-            <p>Nhập text vào đây để Gen ảnh: </p>
-            <textarea name="prompt" rows="3" cols="50" style="font-size: 16pt"></textarea>
+            <p>Nhập Text Vào Đây Để Gen Ra Ảnh:</p>
+            <textarea name="prompt" rows="3" cols="50"></textarea>
         </div>
-        <br>
-
         <div class="myDiv">
-            <button>Gen ảnh</button>
+            <button>Gen Ảnh</button>
         </div>
         {% if image_url is defined %}
         <div>
-        <img src="{{ image_url }}" />
+            <img src="{{ image_url }}" alt="Generated Image" />
         </div>
-        {% endif%}
+        {% endif %}
     </form>
-    <br>
-
 </body>
+
+</html>
